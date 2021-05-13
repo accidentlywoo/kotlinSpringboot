@@ -1,5 +1,6 @@
 package com.example.test1
 
+import org.springframework.boot.Banner
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import kotlin.jvm.JvmStatic
 import org.springframework.boot.SpringApplication
@@ -9,5 +10,7 @@ import org.springframework.boot.runApplication
 class Test1Application
 
 fun main(args: Array<String>) {
-    runApplication<Test1Application>(*args)
+    runApplication<Test1Application>(*args) {
+        setBannerMode(Banner.Mode.OFF)
+    }
 }
