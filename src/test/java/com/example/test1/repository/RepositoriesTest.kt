@@ -12,9 +12,11 @@ import org.assertj.core.api.Assertions.*
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase
 import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureDataJpa
+import org.springframework.test.context.TestConstructor
 import org.springframework.test.context.junit.jupiter.SpringExtension
 
 @DataJpaTest
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 class RepositoriesTests @Autowired constructor(
 	val entityManager: TestEntityManager,
 	val userRepository: UserRepository,
@@ -33,5 +35,15 @@ class RepositoriesTests @Autowired constructor(
 		val found = articleRespository.findByIdOrNull(article.id!!) // ???느낌표 두개 머선 129
 
 		assertThat(found).isEqualTo(article)
+	}
+	
+	@Test
+	fun `When findByLogin then return User`() {
+		val maeve = User("spring boot", "yeonhui", "woo")
+		entityManager.persist(maeve)
+
+		val user = userRepository.findByLogin(maeve.login)
+
+	  assertThat(user).isEqualTo(maeve)
 	}
 }
