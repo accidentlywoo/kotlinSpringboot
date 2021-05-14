@@ -10,5 +10,5 @@ import org.springframework.web.bind.annotation.RequestMapping
 class WelcomController {
 
     @GetMapping("/")
-    fun hello(model: Model) : String = "welcome"
+    fun welcome(model: Model) = "welcome"
 }

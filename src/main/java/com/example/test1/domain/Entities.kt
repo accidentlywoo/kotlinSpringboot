@@ -9,19 +9,23 @@ import javax.persistence.ManyToOne
 
 @Entity
 class Article(
+	@Id @Generated
+	var id : Long? = null,
 	var title: String,
-	var headline: String,
+	var headLine: String,
 	var content: String,
-	@ManyToOne var author: User,
+	@ManyToOne
+	var author: User,
 	var slug: String = title.toSlug(),
-	var addedAt: LocalDateTime = LocalDateTime.now(),
-	@Id @Generated var id : Long? = null)
+	var addedAt: LocalDateTime = LocalDateTime.now()
+)
 
 @Entity
 class User(
+	@Id @Generated
+	var id: Long? = null,
 	var login: String,
-	var firstname: String,
-	var lastname: String,
-	var description: String? = null,
-	@Id @Generated var id: Long? = null
+	var firstName: String,
+	var lastName: String,
+	var description: String? = null
 )
