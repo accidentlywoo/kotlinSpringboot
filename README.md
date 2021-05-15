@@ -15,6 +15,6 @@ $ ./docker.sh
 5. MockK
 
 ## 참고 사이트
-- [Kotlin expertise blog] (https://kotlinexpertise.com/hibernate-with-kotlin-spring-boot/)
-- [Thymeleaf docs] (https://www.thymeleaf.org/doc/articles/standarddialect5minutes.html)
-- [MockK github] (https://github.com/Ninja-Squad/springmockk)
+- [Kotlin expertise blog](https://kotlinexpertise.com/hibernate-with-kotlin-spring-boot/)
+- [Thymeleaf docs](https://www.thymeleaf.org/doc/articles/standarddialect5minutes.html)
+- [MockK github](https://github.com/Ninja-Squad/springmockk)
