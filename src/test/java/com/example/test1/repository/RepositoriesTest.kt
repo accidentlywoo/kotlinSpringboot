@@ -27,7 +27,7 @@ class RepositoriesTests @Autowired constructor(
 		val juergen = User("springjuergen", "Juergen", "Hoeller")
 		entityManager.persist(juergen)
 
-		val article = Article("Springboot king!", "꺄아앙", "헛소뤼", juergen)
+		val article = Article("Springboot king!", "꺄아앙", "헛소뤼", "content", juergen)
 		entityManager.persist(article)
 
 		entityManager.flush()

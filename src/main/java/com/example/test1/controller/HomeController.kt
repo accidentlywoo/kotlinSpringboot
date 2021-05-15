@@ -35,8 +35,8 @@ class HomeController(private val repository: ArticleRespository) {
 	}
 
 	fun Article.render() = RenderedArticle(
-		slug,
 		title,
+		slug,
 		headLine,
 		content,
 		author,
@@ -44,8 +44,8 @@ class HomeController(private val repository: ArticleRespository) {
 	)
 
 	data class RenderedArticle(
-		val slug: String,
 		val title: String,
+		val slug: String,
 		val headLine: String,
 		val content: String,
 		val author: User,

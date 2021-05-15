@@ -11,11 +11,11 @@ import javax.persistence.ManyToOne
 @Entity
 class Article(
 	var title: String,
+	var slug: String = title.toSlug(),
 	var headLine: String,
 	var content: String,
 	@ManyToOne
 	var author: User,
-	var slug: String = title.toSlug(),
 	var addedAt: LocalDateTime = LocalDateTime.now(),
 	@Id
 	@GeneratedValue
